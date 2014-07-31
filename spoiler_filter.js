@@ -11,7 +11,7 @@ console.log("CONTENT SCRIPT ACTIVATED, NOW INFILTRATING CURRENT PAGE!");
 $( document ).ready(function() {
 
  retrieveAndFilter();
- unstyleClick();
+ // unstyleClick();
  loadForGmail();
  loadForFacebook();
  loadForGoogle();
@@ -201,8 +201,9 @@ function filterKeyword(keyword, value) {
     //just for SERP
     $(".tl > a:contains('" + value + "')" ).css( "color", "black" );
     $( ".st:contains('" + value + "')" ).css( "color", "black" );
+    $( "._FV:contains('" + value + "')" ).css( "color", "black" );
+    $( "div._IV.live_result-sports-schedule__lr_sns_ovo_hima.vk_bk:contains('" + value + "')" ).css( "background", "black" );
     $( ".r > a:contains('" + value + "')" ).css( "color", "black" );
-
 
 }
 
