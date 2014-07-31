@@ -13,7 +13,8 @@ $( document ).ready(function() {
  retrieveAndFilter();
  unstyleClick();
  loadForGmail();
- loadForFacebook()
+ loadForFacebook();
+ loadForGoogle();
 
 });
 
@@ -26,6 +27,8 @@ chrome.storage.sync.get("savedKeywords", function(data){
             });
 }
 
+
+//additional filters to make sure certain domains work
 function loadForGmail(){
     if(document.domain === "mail.google.com"){
         console.log("Its gmail!");
@@ -36,75 +39,82 @@ function loadForGmail(){
 function loadForFacebook(){
     if(document.domain === "facebook.com"){
         console.log("Its facebook!");
-        setTimeout(function(){retrieveAndFilter()}, 1500);
+        var timer = setInterval(function(){retrieveAndFilter()}, 800);
     }
 }
 
-//functions for jquery filtering
-function unstyleClick(){
-    $("h1").click(
-       function()
-        { $(this).removeAttr('style') }
-    )
-    $("h2").click(
-       function()
-        { $(this).removeAttr('style') }
-    )
-    $("h3").click(
-       function()
-        { $(this).removeAttr('style') }
-    )
-    $("p").click(
-       function()
-        { $(this).removeAttr('style') }
-    )
-    $("li").click(
-       function()
-        { $(this).removeAttr('style') }
-    )
-     $("div").click(
-       function()
-        { $(this).css("background", "");
-          $(this).css("color", "");
-         }
-    )
-     $(".userContent").click(
-       function()
-        { $(this).css("background", "");
-          $(this).css("color", "");
-         }
-    )
-     $(".UFICommentBody").click(
-       function()
-        { $(this).css("background", "");
-          $(this).css("color", "");
-         }
-    )
-     $(".UFICommentContent").click(
-       function()
-        { $(this).css("background", "");
-          $(this).css("color", "");
-         }
-    )
-     $("._5r--").click(
-       function()
-        { $(this).css("background", "");
-          $(this).css("color", "");
-         }
-    )
-     $(".ha").click(
-       function()
-        { $(this).css("background", "");
-          $(this).css("color", "");
-         }
-    )
-     $(".a3s").click(
-       function()
-        { $(this).css("background", "");
-          $(this).css("color", "");
-         }
-    )
+function loadForGoogle(){
+    if(document.domain === "www.google.com"){
+        console.log("Its google, darn");
+        var timer = setInterval(function(){retrieveAndFilter()}, 800);
+    }
 }
+
+//functions for jquery filtering on click removal, so far not compatible with timer on google pages so I'm commenting out for now
+// function unstyleClick(){
+//     $("h1").click(
+//        function()
+//         { $(this).removeAttr('style') }
+//     )
+//     $("h2").click(
+//        function()
+//         { $(this).removeAttr('style') }
+//     )
+//     $("h3").click(
+//        function()
+//         { $(this).removeAttr('style') }
+//     )
+//     $("p").click(
+//        function()
+//         { $(this).removeAttr('style') }
+//     )
+//     $("li").click(
+//        function()
+//         { $(this).removeAttr('style') }
+//     )
+//      $("div").click(
+//        function()
+//         { $(this).css("background", "");
+//           $(this).css("color", "");
+//          }
+//     )
+//      $(".userContent").click(
+//        function()
+//         { $(this).css("background", "");
+//           $(this).css("color", "");
+//          }
+//     )
+//      $(".UFICommentBody").click(
+//        function()
+//         { $(this).css("background", "");
+//           $(this).css("color", "");
+//          }
+//     )
+//      $(".UFICommentContent").click(
+//        function()
+//         { $(this).css("background", "");
+//           $(this).css("color", "");
+//          }
+//     )
+//      $("._5r--").click(
+//        function()
+//         { $(this).css("background", "");
+//           $(this).css("color", "");
+//          }
+//     )
+//      $(".ha").click(
+//        function()
+//         { $(this).css("background", "");
+//           $(this).css("color", "");
+//          }
+//     )
+//      $(".a3s").click(
+//        function()
+//         { $(this).css("background", "");
+//           $(this).css("color", "");
+//          }
+//     )
+// }
 
 function resetStyle(){
     $( "h1" ).removeAttr( 'style' );

@@ -23,7 +23,7 @@ function updateKeywords(){
 
 /// KEYWORD LIBRARY
 var keywords = {
-    madMen: ["Mad Men", "Don Draper", "Peggy Olsen", "#madmen", "mad men"],
+    madMen: ["Mad Men", "Don Draper", "Peggy Olsen", "#madmen", "mad men", "#MadMen", "@MadMen_AMC"],
     breakingBad: ["Breaking Bad", "Walter White", "Jesse Pinkman", "breaking bad", "#breakingbad","#heisenberg", "#BreakingBad"],
     gameOfThrones: ["Game of Thrones", "game of thrones", "GoT", "#gameofthrones", "#GoT", "Joffrey", "Baratheon", "Lanister", "Stark"],
     goodWife: ["The Good Wife", "the good wife", "Alicia Florrick", "Will Gardner", "Kalinda Sharma", "Diane Lockhart", "Peter Florrick", "Lockhart-Gardner", "#TheGoodWife", "#thegoodwife"],
