@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "SpoilerCat",
   "description": "Saving you from the internet!",
-  "version": "0.1",
+  "version": "0.2",
   "icons": {
       "128": "cheshire_cat_128.png",
       "16": "cheshire_cat_16.png",

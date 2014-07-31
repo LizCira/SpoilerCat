@@ -148,6 +148,7 @@ function resetStyle(){
     $(".zA yO").css("color", "");
     $(".zA zE").css("background", "");
     $(".zA zE").css("color", "");
+    $( "div._IV.live_result-sports-schedule__lr_sns_ovo_hima.vk_bk").css("background", "");
 }
 
 function filterKeyword(keyword, value) {
